@@ -200,16 +200,7 @@ export default function App() {
           <strong style={{ color: 'white' }}>{'<Suspense />'}</strong> para
           manejar la carga de manera correcta con su respectivo{' '}
           <strong>fallback</strong> como atributo del Suspense.{' '}
-          <a
-            href="https://github.com/iAngelManuel/testing-react19/blob/main/src/components/UseFormStatus.jsx"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Use.jsx
-          </a>{' '}
-          para ver el código
         </p>
-        {/* <Use /> */}
         <UseExample />
         <UseExampleTwoExample />
       </div>
