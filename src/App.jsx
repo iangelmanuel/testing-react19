@@ -2,6 +2,7 @@ import { version } from 'react'
 import { Seo } from './components/Seo'
 import { UseTransitions } from './components/UseTransitions'
 import { UseActionState } from './components/UseActionState'
+import { UseFormStatus } from './components/UseFormStatus'
 
 export default function App() {
   return (
@@ -14,18 +15,22 @@ export default function App() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 50,
           padding: 20,
-          maxWidth: 1200,
           margin: 'auto',
           marginBottom: 50,
+          backgroundColor: '#222',
         }}
       >
-        <h1 style={{ textAlign: 'center', margin: 0 }}>
-          ¡Hola! Estás usando React versión 19.
+        <h1 style={{ textAlign: 'center', margin: 0, color: 'yellow' }}>
+          Bienvenido a React 19 🚀
         </h1>
 
-        <small style={{ color: 'red' }}>{version}</small>
+        <p>
+          Aquí encontraras algunas demos de las nuevas implementaciónes de React
+          en la versión 19
+        </p>
+
+        <small style={{ color: 'gray' }}>Version: {version}</small>
       </div>
 
       <div
@@ -34,11 +39,10 @@ export default function App() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 50,
           padding: 20,
           maxWidth: 800,
           margin: 'auto',
-          marginBottom: 80,
+          marginBottom: '10rem',
         }}
       >
         <h2 style={{ color: 'purple', margin: 0 }}>Uso de useTransitions</h2>
@@ -57,11 +61,10 @@ export default function App() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 50,
           padding: 20,
           maxWidth: 800,
           margin: 'auto',
-          marginBottom: 80,
+          marginBottom: '10rem',
         }}
       >
         <h2 style={{ color: 'purple', margin: 0 }}>Uso de useActionState</h2>
@@ -73,6 +76,30 @@ export default function App() {
           librerias como Formik o React Hook Form
         </p>
         <UseActionState />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 20,
+          maxWidth: 800,
+          margin: 'auto',
+          marginBottom: '10rem',
+        }}
+      >
+        <h2 style={{ color: 'purple', margin: 0 }}>Uso de useActionStatus</h2>
+        <h4 style={{ margin: 0 }}>Explicación:</h4>
+        <p style={{ color: 'gray', textAlign: 'center' }}>
+          El useActionStatus se utiliza para el manejo de estados de carga de un
+          formulario, siendo el formulario el componente padre y todos los
+          componentes hijos del formulario (como los inputs) a nivel de
+          componente pueden escuchar por este Hook el estado de carga del
+          formulario. (mirar el componente UseFormStatus.jsx)
+        </p>
+        <UseFormStatus />
       </div>
     </>
   )
