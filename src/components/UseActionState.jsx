@@ -33,7 +33,7 @@ export const UseActionState = () => {
           <img
             src={data.sprites.other.home.front_default}
             alt={data.name}
-            style={{ width: 500, margin: '0, auto' }}
+            style={{ width: 200, margin: '0, auto' }}
           />
         )}
       </div>
