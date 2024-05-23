@@ -4,6 +4,7 @@ import { UseTransitions } from './components/UseTransitions'
 import { UseActionState } from './components/UseActionState'
 import { UseFormStatus } from './components/UseFormStatus'
 import { Github } from './svg/Github'
+import { React } from './svg/React'
 
 export default function App() {
   return (
@@ -13,13 +14,17 @@ export default function App() {
       <header
         style={{
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'space-between',
+          alignItems: 'center',
           padding: 20,
           margin: 'auto',
-          marginBottom: 50,
-          backgroundColor: '#222',
+          marginBottom: '5rem',
         }}
       >
+        <div style={{ color: 'cyan' }}>
+          <React />
+        </div>
         <div
           style={{
             display: 'flex',
@@ -29,7 +34,6 @@ export default function App() {
             padding: 20,
             margin: 'auto',
             marginBottom: 50,
-            backgroundColor: '#222',
           }}
         >
           <h1 style={{ textAlign: 'center', margin: 0, color: 'yellow' }}>
@@ -42,13 +46,23 @@ export default function App() {
           <small style={{ color: 'gray' }}>Version: {version}</small>
         </div>
 
-        <div>
+        <div
+          className="scale"
+          style={{ padding: 0, margin: 0, height: 'auto' }}
+        >
           <a
             href="https://github.com/iAngelManuel/testing-react19"
             rel="noreferrer"
             target="_blank"
-            style={{ color: 'white' }}
+            style={{
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              textDecoration: 'none',
+            }}
           >
+            <small>iAngelManuel</small>
             <Github />
           </a>
         </div>
@@ -71,7 +85,15 @@ export default function App() {
         <p style={{ color: 'gray', textAlign: 'center', margin: 0 }}>
           El useTransitions se encarga de manejar funciones asincronas con un
           loading para informarle al usuario de la carga asincrona de una
-          petición
+          petición.{' '}
+          <a
+            href="https://github.com/iAngelManuel/testing-react19/blob/main/src/components/UseTransitions.jsx"
+            target="_blank"
+            rel="noreferrer"
+          >
+            useTransitions.jsx
+          </a>{' '}
+          para ver el código
         </p>
         <UseTransitions />
       </div>
@@ -94,7 +116,15 @@ export default function App() {
           El useActionState se encarga de manejar todo el estado del formulario,
           es decir, el estado de los inputs, el estado de los errores y el
           estado de los mensajes de éxito, esto para evitar utilizar otras
-          librerias como Formik o React Hook Form
+          librerias como Formik o React Hook Form.{' '}
+          <a
+            href="https://github.com/iAngelManuel/testing-react19/blob/main/src/components/UseFormStatus.jsx"
+            target="_blank"
+            rel="noreferrer"
+          >
+            useActionState.jsx
+          </a>{' '}
+          para ver el código
         </p>
         <UseActionState />
       </div>

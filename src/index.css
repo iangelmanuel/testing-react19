@@ -1,5 +1,4 @@
 body {
-  background-color: #000;
   color: white;
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -14,4 +13,17 @@ button:disabled:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   scale: 1.1;
+}
+
+.rotate-animation {
+  animation: RotateAnimation 60s linear infinite;
+}
+
+@keyframes RotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
