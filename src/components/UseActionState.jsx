@@ -5,21 +5,25 @@ export const UseActionState = () => {
 
   const [error, submitAction, isPending] = useActionState(
     async (previousState, formData) => {
+      setData({})
       const pokemon = formData.get('pokemon')
+      const toSearch = pokemon.toLowerCase().trim()
 
       const getPokemonData = await fetch(
-        'https://pokeapi.co/api/v2/pokemon/' + pokemon
+        `https://pokeapi.co/api/v2/pokemon/${toSearch}`
       )
+
       const data = await getPokemonData.json()
+
       setData(data)
     }
   )
 
-  const checkStatusForm = isPending ? 'Buscano...' : 'Buscar'
+  const checkStatusForm = isPending ? 'Buscando...' : 'Buscar'
   return (
     <>
       <div>
-        {error && <p>{error}</p>}
+        {error && <p>{error.message}</p>}
 
         <h3 style={{ textAlign: 'center', margin: 0 }}>
           {isPending ? 'Buscando Pokemon' : data.name}
@@ -27,9 +31,9 @@ export const UseActionState = () => {
 
         {data.sprites && (
           <img
-            src={data.sprites.front_default}
+            src={data.sprites.other.home.front_default}
             alt={data.name}
-            style={{ width: 200, margin: '0, auto' }}
+            style={{ width: 500, margin: '0, auto' }}
           />
         )}
       </div>
