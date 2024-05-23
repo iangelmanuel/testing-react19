@@ -62,8 +62,8 @@ export default function App() {
               textDecoration: 'none',
             }}
           >
-            <small>iAngelManuel</small>
             <Github />
+            <small>iAngelManuel</small>
           </a>
         </div>
       </header>
