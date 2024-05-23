@@ -20,7 +20,6 @@ export const UseTransitions = () => {
       }
 
       setData(data)
-      console.log(data)
     })
   }
 
