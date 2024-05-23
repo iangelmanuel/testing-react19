@@ -9,3 +9,9 @@ body {
 button:disabled:hover {
   cursor: not-allowed;
 }
+
+.scale:hover {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  scale: 1.1;
+}

@@ -3,35 +3,56 @@ import { Seo } from './components/Seo'
 import { UseTransitions } from './components/UseTransitions'
 import { UseActionState } from './components/UseActionState'
 import { UseFormStatus } from './components/UseFormStatus'
+import { Github } from './svg/Github'
 
 export default function App() {
   return (
     <>
       <Seo title={'Bienvenido a React'} />
 
-      <div
+      <header
         style={{
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'space-between',
           padding: 20,
           margin: 'auto',
           marginBottom: 50,
           backgroundColor: '#222',
         }}
       >
-        <h1 style={{ textAlign: 'center', margin: 0, color: 'yellow' }}>
-          Bienvenido a React 19 🚀
-        </h1>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 20,
+            margin: 'auto',
+            marginBottom: 50,
+            backgroundColor: '#222',
+          }}
+        >
+          <h1 style={{ textAlign: 'center', margin: 0, color: 'yellow' }}>
+            Bienvenido a React 19 🚀
+          </h1>
+          <p>
+            Aquí encontraras algunas demos de las nuevas implementaciónes de
+            React en la versión 19
+          </p>
+          <small style={{ color: 'gray' }}>Version: {version}</small>
+        </div>
 
-        <p>
-          Aquí encontraras algunas demos de las nuevas implementaciónes de React
-          en la versión 19
-        </p>
-
-        <small style={{ color: 'gray' }}>Version: {version}</small>
-      </div>
+        <div>
+          <a
+            href="https://github.com/iAngelManuel/testing-react19"
+            rel="noreferrer"
+            target="_blank"
+            style={{ color: 'white' }}
+          >
+            <Github />
+          </a>
+        </div>
+      </header>
 
       <div
         style={{
@@ -97,7 +118,15 @@ export default function App() {
           formulario, siendo el formulario el componente padre y todos los
           componentes hijos del formulario (como los inputs) a nivel de
           componente pueden escuchar por este Hook el estado de carga del
-          formulario. (mirar el componente UseFormStatus.jsx)
+          formulario.{' '}
+          <a
+            href="https://github.com/iAngelManuel/testing-react19/blob/main/src/components/UseFormStatus.jsx"
+            target="_blank"
+            rel="noreferrer"
+          >
+            UseFormStatus.jsx
+          </a>{' '}
+          para ver el código
         </p>
         <UseFormStatus />
       </div>
