@@ -15,11 +15,12 @@ export const UseTransitions = () => {
       const error = await getFetchData()
 
       if (error) {
-        console.log(error)
+        console.error(error)
         return
       }
 
       setData(data)
+      console.log(data)
     })
   }
 
