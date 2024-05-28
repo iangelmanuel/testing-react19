@@ -13,6 +13,9 @@ import { UseFormStatus } from './components/UseFormStatus'
 import { UseExample } from './components/examples/UseExamples'
 import { UseExampleTwoExample } from './components/examples/UseExampleTwoExample'
 
+import { UseOptimistic } from './components/UseOptimistic'
+import { UseOptimisticExample } from './components/examples/UseOptimisticExample'
+
 // import { Use } from './components/Use'
 import { Github } from './svg/Github'
 import { React } from './svg/React'
@@ -201,7 +204,18 @@ export default function App() {
           manejar la carga de manera correcta con su respectivo{' '}
           <strong>fallback</strong> como atributo del Suspense.{' '}
         </p>
+
         <UseExample />
+
+        <h4 style={{ margin: 0 }}>Explicación 2:</h4>
+        <p style={{ color: 'gray', textAlign: 'center' }}>
+          Como vimos que el hook <strong>use</strong> se encarga de manejar la
+          carga de un componente de manera asincrona, también se puede utilizar
+          para manejar la carga de un contexto y así evitar utilizar el hook
+          anterior <strong>useContext()</strong> para manejar la carga de un
+          contexto.{' '}
+        </p>
+
         <UseExampleTwoExample />
       </div>
 
@@ -220,16 +234,13 @@ export default function App() {
         <h2 style={{ color: 'purple', margin: 0 }}>Uso de useOptimistic()</h2>
         <h4 style={{ margin: 0 }}>Explicación:</h4>
         <p style={{ color: 'gray', textAlign: 'center' }}>
-          La nueva API de React llamada{' '}
-          <strong style={{ color: 'white' }}>use</strong> se utiliza para
-          manejar la carga de un componente de manera asincrona, es decir, el
-          componente se monta de manera asincrona utilizando dentro la API nueva
-          de react{' '}
-          <strong style={{ color: 'white' }}>use(Función Asíncrona)</strong>,
-          luego debemos envolver nuestro componente asíncrono con el componente{' '}
-          <strong style={{ color: 'white' }}>{'<Suspense />'}</strong> para
-          manejar la carga de manera correcta con su respectivo{' '}
-          <strong>fallback</strong> como atributo del Suspense.{' '}
+          Como su nombre lo indica este hook se encarga de manejar la carga de
+          un formulario de manera optimista, es decir, se envía la petición al
+          servidor y se actualiza el estado del formulario de manera optimista
+          sin esperar la respuesta del servidor, si la respuesta del servidor es
+          correcta se mantiene el estado del formulario, si la respuesta del
+          servidor es incorrecta se revierte el estado del formulario a su
+          estado anterior.{' '}
           <a
             href="https://github.com/iAngelManuel/testing-react19/blob/main/src/components/UseFormStatus.jsx"
             target="_blank"
@@ -239,8 +250,8 @@ export default function App() {
           </a>{' '}
           para ver el código
         </p>
-        {/* <Use /> */}
-        <UseExample />
+        <UseOptimisticExample />
+        <UseOptimistic />
       </div>
     </>
   )
