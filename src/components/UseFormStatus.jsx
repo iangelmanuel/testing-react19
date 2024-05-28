@@ -1,7 +1,6 @@
 import { useFormStatus } from 'react-dom'
 import { useState } from 'react'
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+import { sleep } from '../utils/sleep'
 
 export const UseFormStatus = () => {
   const [data, setData] = useState('')
