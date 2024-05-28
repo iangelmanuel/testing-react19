@@ -2,7 +2,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const codeString = `
-import {use} from 'react';
+import { use } from 'react';
 import ThemeContext from './ThemeContext'
 
 function Heading({children}) {
@@ -23,8 +23,14 @@ function Heading({children}) {
 
 export const UseExampleTwoExample = () => {
   return (
-    <SyntaxHighlighter language="jsx" style={oneDark}>
-      {codeString}
-    </SyntaxHighlighter>
+    <>
+      <small>
+        Código tomado de{' '}
+        <a href="https://react.dev/blog/2024/04/25/react-19">React</a>
+      </small>
+      <SyntaxHighlighter language="jsx" style={oneDark}>
+        {codeString}
+      </SyntaxHighlighter>
+    </>
   )
 }
